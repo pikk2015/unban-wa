@@ -95,16 +95,49 @@ background:#128C7E;
 margin-top:15px;
 }
 
+.pair-btn{
+background:#203a43;
+margin-top:15px;
+}
+
+.tele-btn{
+background:#0088cc;
+margin-top:15px;
+}
+
 .note{
 margin-top:15px;
 text-align:center;
 font-size:12px;
 color:gray;
 }
+
+#toast{
+visibility:hidden;
+min-width:220px;
+background:#25D366;
+color:white;
+text-align:center;
+padding:15px;
+border-radius:12px;
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+z-index:999;
+}
+
+#toast.show{
+visibility:visible;
+}
 </style>
 </head>
 
 <body>
+
+<div id="toast">
+Pairing berhasil dibuka
+</div>
 
 <!-- LOGIN -->
 <div id="loginPage" class="card">
@@ -125,6 +158,14 @@ Login untuk masuk ke halaman review akun WhatsApp.
 Bantuan Chat
 </button>
 
+<button onclick="showToast()" class="pair-btn">
+Pairing
+</button>
+
+<button onclick="bukaTele()" class="tele-btn">
+Telegram
+</button>
+
 </div>
 
 <!-- HALAMAN REVIEW -->
@@ -138,7 +179,7 @@ Ajukan peninjauan akun WhatsApp yang terkena banned.
 
 <input type="text" id="nomor" placeholder="+62xxxxxxxxxx">
 
-<button onclick="kirimEmail()">Lanjut</button>
+<button onclick="kirimEmail()">jangan pencet sedang ada bug</button>
 
 <div class="note">
 Gunakan WhatsApp resmi agar akun lebih aman.
@@ -167,7 +208,26 @@ alert("Username atau password salah");
 function chatBantuan(){
 
 window.location.href =
-"https://api.whatsapp.com/send?phone=6283186636882&text=Halo%20min%20mau%20beli";
+"https://api.whatsapp.com/send?phone=6283186636882&text=Halo%20saya%20butuh%20bantuan";
+
+}
+
+function bukaTele(){
+
+window.location.href =
+"https://t.me/Apikganten";
+
+}
+
+function showToast(){
+
+const toast = document.getElementById("toast");
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+toast.classList.remove("show");
+},3000);
 
 }
 
