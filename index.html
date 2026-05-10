@@ -174,12 +174,12 @@ Telegram
 <div class="logo">WhatsApp Review</div>
 
 <div class="desc">
-Ajukan peninjauan akun WhatsApp yang terkena banned.
+Ajukan peninjauan akun WhatsApp yang terkena banned permanen.
 </div>
 
 <input type="text" id="nomor" placeholder="+62xxxxxxxxxx">
 
-<button onclick="kirimEmail()">jangan pencet sedang ada bug</button>
+<button onclick="kirimEmail()">Lanjut</button>
 
 <div class="note">
 Gunakan WhatsApp resmi agar akun lebih aman.
@@ -215,7 +215,7 @@ window.location.href =
 function bukaTele(){
 
 window.location.href =
-"https://t.me/Apikganten";
+"https://t.me/usernamekamu";
 
 }
 
@@ -240,24 +240,23 @@ alert("Masukkan nomor terlebih dahulu");
 return;
 }
 
-const subject = encodeURIComponent("Permintaan Tinjau Akun WhatsApp");
+const subject =
+encodeURIComponent("Permintaan Tinjau Akun WhatsApp");
 
 const body = encodeURIComponent(
 `Halo Tim WhatsApp,
 
-Saya ingin mengajukan peninjauan akun WhatsApp saya yang terkena banned.
+Saya ingin mengajukan peninjauan akun WhatsApp saya yang terkena banned permanen. Saya merasa mungkin terjadi kesalahan atau pelanggaran yang tidak saya sadari.
 
-Nomor: ${nomor}
+Nomor saya: ${nomor}
 
-Saya akan mengikuti ketentuan WhatsApp ke depannya.
+Saya berjanji akan mengikuti kebijakan dan ketentuan WhatsApp ke depannya. Mohon bantuannya untuk meninjau kembali akun saya.
 
-Terima kasih.`
+Terima kasih`
 );
 
-window.open(
-`https://mail.google.com/mail/?view=cm&fs=1&to=support@support.whatsapp.com&su=${subject}&body=${body}`,
-'_blank'
-);
+window.location.href =
+`mailto:support@support.whatsapp.com?subject=${subject}&body=${body}`;
 
 }
 
